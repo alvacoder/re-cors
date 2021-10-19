@@ -1,0 +1,23 @@
+{
+  "name": "re-cors",
+  "version": "1.0.0",
+  "description": "Proxy service for making http requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvacoder/re-cors.git"
+  },
+  "keywords": [
+    "cors",
+    "proxy"
+  ],
+  "author": "Idris Adeniji (Alvacoder)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvacoder/re-cors/issues"
+  },
+  "homepage": "https://github.com/alvacoder/re-cors#readme"
+}
