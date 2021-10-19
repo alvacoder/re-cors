@@ -72,12 +72,15 @@ app.get("/:url", async (req, res) => {
 });
 
 app.get("/*", async (req, res) => {
-  const url = req.params['0'];
+  let url = req.params['0'];
   let data;
   try {
     // console.log(url, 2);
-      console.log(url, 1);
+      console.log(req.params, req.query, 1);
     //   process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
+      console.log(Object.keys(req.query), 4);
+      url = `${url}?${Object.keys(req.query)[0]}=${req.query[Object.keys(req.query)[0]]}`
+      console.log(url, 333);
       data = await axios.get(`${url}`);
       data = data.data
     res.send({
