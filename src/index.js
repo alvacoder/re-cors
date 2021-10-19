@@ -71,6 +71,14 @@ app.get("/:url", async (req, res) => {
   }
 });
 
+app.get("/", async (req, res) => {
+  console.log(22);
+  res.send({
+    status: 200,
+    message: "Welcome to Re-cors 1.0",
+  });
+});
+
 app.get("/*", async (req, res) => {
   let url = req.params['0'];
   let data;
@@ -95,14 +103,6 @@ app.get("/*", async (req, res) => {
       response: error.message,
     });
   }
-});
-
-app.get("/", async (req, res) => {
-  console.log(22);
-  res.send({
-    status: 200,
-    message: "Welcome to Re-cors 1.0",
-  });
 });
 
 app.listen(port, () => {
