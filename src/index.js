@@ -53,8 +53,6 @@ app.get("/:url", async (req, res) => {
   const { url } = req.params;
   let data;
   try {
-    console.log(url, 2);
-    console.log(req.params, 1);
       data = await axios.get(`${url}`);
       data = data.data
     res.send({
@@ -62,7 +60,6 @@ app.get("/:url", async (req, res) => {
       data,
     });
   } catch (error) {
-    // console.log(error);
     res.send({
       status: 500,
       message: "An error occurred.",
@@ -72,7 +69,6 @@ app.get("/:url", async (req, res) => {
 });
 
 app.get("/", async (req, res) => {
-  console.log(22);
   res.send({
     status: 200,
     message: "Welcome to Re-cors 1.0",
@@ -83,12 +79,7 @@ app.get("/*", async (req, res) => {
   let url = req.params['0'];
   let data;
   try {
-    // console.log(url, 2);
-    //   console.log(req.params, req.query, 1);
-    //   process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
-    //   console.log(Object.keys(req.query), 4);
       url = `${url}?${Object.keys(req.query)[0]}=${req.query[Object.keys(req.query)[0]]}`
-    //   console.log(url, 333);
       data = await axios.get(`${url}`);
       data = data.data
     res.send({
@@ -96,7 +87,6 @@ app.get("/*", async (req, res) => {
       data,
     });
   } catch (error) {
-    // console.log(error);
     res.send({
       status: 500,
       message: "An error occurred.",
